@@ -17,7 +17,7 @@ Run the application
 
 Run the application and go to http://localhost:7575/graphql/schema. You should see a description of the GraphQL schema, something like this:
 
-```json
+```graphql
 "Directs the executor to include this field or fragment only when the `if` argument is true"
 directive @include(
     "Included when true."
