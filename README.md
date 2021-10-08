@@ -111,10 +111,10 @@ enum Gender {
   MALE
 }
 ```
-go to http://localhost:7575/graphiql. You should see `GraphiQL` console, an in-browser tool for writing, validating, and testing GraphQL queries   
-   
+go to http://localhost:7575/graphiql. You should see `GraphiQL` console, an in-browser tool for writing, validating, and testing GraphQL queries
 
-###Now go to Graph*i*QL and execute a query, for example:
+### Now go to Graph*i*QL and execute a query, for example:
+
 ```graphql
 {
   moviesByName(name:"Matrix")
