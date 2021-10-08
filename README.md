@@ -17,7 +17,7 @@ Run the application
 
 Run the application and go to http://localhost:7575/graphql/schema. You should see a description of the GraphQL schema, something like this:
 
-```json lines
+```json
 "Directs the executor to include this field or fragment only when the `if` argument is true"
 directive @include(
     "Included when true."
@@ -114,7 +114,7 @@ enum Gender {
 go to http://localhost:7575/graphiql. You should see `GraphiQL` console, an in-browser tool for writing, validating, and testing GraphQL queries   
    
 
-####Now go to Graph*i*QL and execute a query, for example:
+###Now go to Graph*i*QL and execute a query, for example:
 ```graphql
 {
   moviesByName(name:"Matrix")

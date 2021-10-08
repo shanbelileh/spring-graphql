@@ -4,6 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 src/main/resources/.h2.server.properties
+.mvn
 ### STS ###
 .apt_generated
 .classpath
