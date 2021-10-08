@@ -1,0 +1,23 @@
+server:
+  port: 7575
+
+
+spring:
+  application:
+    name: spring graphql example
+  datasource:
+    url: jdbc:h2:file:./data/imdb.h2;DB_CLOSE_DELAY=-1
+    username: sa
+    password: sa
+  jpa:
+    show-sql: true
+  graphql:
+    path: /graphql
+    schema:
+      locations: 'classpath:graphql/'
+      printer:
+        enabled: true
+    graphiql:
+      enabled: true
+      path: /graphiql
+

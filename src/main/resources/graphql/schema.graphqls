@@ -1,0 +1,69 @@
+type Query {
+    actors : [ActorsEntity]
+    actorByFirstName(firstName: String!) : [ActorsEntity]
+    actorNameLike(name: String!) : [ActorsEntity]
+    roles : [RolesEntity]
+    movies : [MoviesEntity]
+    moviesByName(name:String!) : [MoviesEntity]
+    directors : [DirectorsEntity]
+}
+
+
+type ActorsEntity {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    gender: Gender!
+    roles: [RolesEntity]
+}
+
+type RolesEntity {
+    actorId: ID!
+    movieId: ID!
+    role: String!
+    actor: ActorsEntity!
+    movie: MoviesEntity!
+}
+
+type MoviesEntity {
+    id: ID!
+    name: String!
+    year : Int!
+    rank: Float
+    directors : [MoviesDirectorsEntity]
+    genres : [MoviesGenresEntity]
+    roles: [RolesEntity]
+}
+
+type DirectorsEntity {
+    id: ID!
+    firstName :String!
+    lastName: String!
+    genres : [DirectorsGenresEntity]
+    movies : [MoviesDirectorsEntity]
+}
+
+type DirectorsGenresEntity {
+    directorId: ID!
+    genre: ID!
+    prob :Float!
+    director : DirectorsEntity!
+}
+
+type MoviesDirectorsEntity {
+    directorId : ID!
+    movieId :ID!
+    director: DirectorsEntity!
+    movie : MoviesEntity!
+}
+
+type MoviesGenresEntity {
+    movieId : ID!
+    genre : ID!
+    movie : MoviesEntity!
+}
+
+enum Gender {
+    MALE
+    FEMALE
+}
