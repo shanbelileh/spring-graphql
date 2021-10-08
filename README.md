@@ -139,7 +139,85 @@ go to http://localhost:7575/graphiql. You should see `GraphiQL` console, an in-b
   }
 }
 ```
+**and see result like**  
 
+```json
+{
+  "data": {
+    "moviesByName": [
+      {
+        "name": "Matrix, The",
+        "year": 1999,
+        "rank": 8.5,
+        "directors": [
+          {
+            "director": {
+              "firstName": "Andy",
+              "lastName": "Wachowski"
+            }
+          },
+          {
+            "director": {
+              "firstName": "Larry",
+              "lastName": "Wachowski"
+            }
+          }
+        ],
+        "roles": [
+          {
+            "role": "Morpheus",
+            "actor": {
+              "firstName": "Laurence",
+              "lastName": "Fishburne",
+              "gender": "MALE"
+            }
+          },
+          {
+            "role": "Cypher",
+            "actor": {
+              "firstName": "Joe",
+              "lastName": "Pantoliano",
+              "gender": "MALE"
+            }
+          },
+          {
+            "role": "Neo",
+            "actor": {
+              "firstName": "Keanu",
+              "lastName": "Reeves",
+              "gender": "MALE"
+            }
+          },
+          {
+            "role": "Agent Smith",
+            "actor": {
+              "firstName": "Hugo",
+              "lastName": "Weaving",
+              "gender": "MALE"
+            }
+          },
+          {
+            "role": "Oracle",
+            "actor": {
+              "firstName": "Gloria",
+              "lastName": "Foster",
+              "gender": "FEMALE"
+            }
+          },
+          {
+            "role": "Trinity",
+            "actor": {
+              "firstName": "Carrie-Anne",
+              "lastName": "Moss",
+              "gender": "FEMALE"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
 
 
 # Conclusion   
