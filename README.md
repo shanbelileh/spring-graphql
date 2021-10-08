@@ -7,7 +7,7 @@
 ````
 
 # GraphQL and Graph*i*QL Spring Boot  example
-***
+
 A simple GraphQL Spring Boot example based on imdb data model.   
 
 Run the application 
@@ -143,7 +143,7 @@ go to http://localhost:7575/graphiql. You should see `GraphiQL` console, an in-b
 
 
 # Conclusion   
-___
+
 GraphQL is a flexible and powerful alternative to REST for building APIs. Here are some points to remember:
 - GraphQL is a query language that is independent of the source of the data (database, web service, etc.).
 - GraphQL describes the data that an API provides via a strong typing system.
