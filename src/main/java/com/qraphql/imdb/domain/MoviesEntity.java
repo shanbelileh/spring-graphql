@@ -21,7 +21,7 @@ public class MoviesEntity
     private long id;
     @Column(name = "NAME")
     private String name;
-    @Column(name = "YEAR")
+    @Column(name = "PROD_YEAR")
     private long year;
     @Column(name = "RANK")
     private Double rank;
