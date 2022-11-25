@@ -15,7 +15,7 @@
  */
 package com.qraphql.imdb.config;
 
-import org.springframework.graphql.execution.ThreadLocalAccessor;
+import io.micrometer.context.ThreadLocalAccessor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -27,24 +27,25 @@ import java.util.Map;
  * fetchers in Spring GraphQL.
  */
 @Component
-public class RequestAttributesAccessor implements ThreadLocalAccessor {
-
-	private static final String KEY = RequestAttributesAccessor.class.getName();
+public class RequestAttributesAccessor implements ThreadLocalAccessor<RequestAttributes> {
 
 	@Override
-	public void extractValues(Map<String, Object> container) {
-		container.put(KEY, RequestContextHolder.getRequestAttributes());
+	public Object key() {
+		return RequestAttributesAccessor.class.getName();
 	}
 
 	@Override
-	public void restoreValues(Map<String, Object> values) {
-		if (values.containsKey(KEY)) {
-			RequestContextHolder.setRequestAttributes((RequestAttributes) values.get(KEY));
-		}
+	public RequestAttributes getValue() {
+		return RequestContextHolder.getRequestAttributes();
 	}
 
 	@Override
-	public void resetValues(Map<String, Object> values) {
+	public void setValue(RequestAttributes attributes) {
+		RequestContextHolder.setRequestAttributes(attributes);
+	}
+
+	@Override
+	public void reset() {
 		RequestContextHolder.resetRequestAttributes();
 	}
 
