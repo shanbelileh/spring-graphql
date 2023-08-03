@@ -26,9 +26,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-
+    - name :   copy artifact
+      run: mkdir build && cp target/*.jar build
     - name: Upload bundle Build Files
       uses: actions/upload-artifact@v3
       with:
-         name: android-release
-         path: ./target/graphql*.jar
+         name: package
+         path: build
